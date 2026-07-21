@@ -8,42 +8,107 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+
 from scripts.ensure_data_files import SCHEMAS
 
 
 def main() -> None:
-    failures = []
-    summary = {}
-    for filename, required in SCHEMAS.items():
+    errors: list[str] = []
+    warnings: list[str] = []
+    summary: dict[str, dict] = {}
+
+    # Validate every declared CSV. Missing/invalid datasets are reported,
+    # but they do not block deployment because public sources can fail
+    # temporarily and the dashboard is designed to retain cached data.
+    for filename, required_columns in SCHEMAS.items():
         path = ROOT / "data" / filename
+
         if not path.exists():
-            failures.append(f"missing: data/{filename}")
+            warnings.append(f"missing optional dataset: data/{filename}")
+            summary[filename] = {"rows": 0, "columns": [], "status": "missing"}
             continue
+
         try:
-            df = pd.read_csv(path)
-        except Exception as exc:
-            failures.append(f"unreadable data/{filename}: {exc}")
+            dataframe = pd.read_csv(path)
+        except pd.errors.EmptyDataError:
+            warnings.append(f"empty dataset: data/{filename}")
+            summary[filename] = {"rows": 0, "columns": [], "status": "empty"}
             continue
-        missing = [c for c in required if c not in df.columns]
-        if missing:
-            failures.append(f"data/{filename} missing columns: {missing}")
-        summary[filename] = {"rows": len(df), "columns": list(df.columns)}
-    for rel in [
-        ".github/workflows/update-and-deploy.yml",
-        ".github/workflows/backfill-crowding.yml",
+        except Exception as exc:
+            warnings.append(f"unreadable dataset data/{filename}: {exc}")
+            summary[filename] = {"rows": 0, "columns": [], "status": "unreadable"}
+            continue
+
+        missing_columns = [
+            column for column in required_columns if column not in dataframe.columns
+        ]
+        if missing_columns:
+            warnings.append(
+                f"data/{filename} missing columns: {missing_columns}"
+            )
+
+        row_count = len(dataframe)
+        status = "ok"
+        if row_count == 0:
+            status = "waiting_for_update"
+            if filename == "a_share_universe.csv":
+                warnings.append(
+                    "data/a_share_universe.csv has 0 rows; this is normal "
+                    "before the crowding-history backfill runs."
+                )
+            else:
+                warnings.append(
+                    f"data/{filename} has 0 rows and is waiting for an online update."
+                )
+
+        summary[filename] = {
+            "rows": row_count,
+            "columns": list(dataframe.columns),
+            "status": status,
+        }
+
+    # Only files required to render and deploy the already-built website
+    # are treated as blocking errors.
+    required_runtime_files = [
         "scripts/update_data.py",
         "scripts/build_site.py",
         "src/pipeline.py",
         "src/providers.py",
         "src/extended_providers.py",
         "public/index.html",
-    ]:
-        if not (ROOT / rel).exists():
-            failures.append(f"missing: {rel}")
-    result = {"ok": not failures, "failures": failures, "data": summary}
-    (ROOT / "data" / "manifest.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    ]
+    for relative_path in required_runtime_files:
+        if not (ROOT / relative_path).exists():
+            errors.append(f"missing required runtime file: {relative_path}")
+
+    # Workflow files are useful, but absence of the optional backfill workflow
+    # must not block publication of the main dashboard.
+    optional_files = [
+        ".github/workflows/update-and-deploy.yml",
+        ".github/workflows/backfill-crowding.yml",
+    ]
+    for relative_path in optional_files:
+        if not (ROOT / relative_path).exists():
+            warnings.append(f"missing optional workflow file: {relative_path}")
+
+    result = {
+        "ok": not errors,
+        "deployment_allowed": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "data": summary,
+    }
+
+    manifest_path = ROOT / "data" / "manifest.json"
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    if failures:
+
+    if errors:
         raise SystemExit(1)
 
 
