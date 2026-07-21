@@ -89,11 +89,13 @@ def valuation_summary(frame: pd.DataFrame) -> list[dict[str, Any]]:
     return output
 
 
+# v6.0.1: add missing liquidityKpis DOM target and isolate module rendering.
 HTML = r'''<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ title }}</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23172c58%27/%3E%3Cpath d=%27M13 43V21h7l12 14 12-14h7v22h-7V31L32 45 20 31v12z%27 fill=%27white%27/%3E%3C/svg%3E">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 <style>
 :root{--bg:#f3f6fb;--panel:#fff;--ink:#172033;--muted:#6d7890;--line:#e4e9f2;--blue:#3167e3;--navy:#172c58;--cyan:#1e9ca5;--purple:#7456d8;--amber:#c98a18;--up:#d64242;--down:#159567;--shadow:0 14px 36px rgba(25,42,80,.08)}
@@ -112,7 +114,7 @@ HTML = r'''<!doctype html>
 
 <section class="panel active" id="overview"><div class="grid kpis" id="overviewKpis"></div><div class="grid g2"><div class="card"><h3>全球主要资产标准化走势 <small>起点=100</small></h3><div id="overviewMarket" class="chart"></div></div><div class="card"><h3>A股市场温度</h3><div id="overviewBreadth" class="chart"></div></div></div></section>
 
-<section class="panel" id="macro"><div class="grid kpis" id="macroKpis"></div><div class="grid g2"><div class="card"><h3>M1、M2与剪刀差</h3><div id="moneyChart" class="chart"></div></div><div class="card"><h3>银行间资金利率</h3><div id="liquidityChart" class="chart"></div></div><div class="card"><h3>社会融资规模</h3><div id="socialChart" class="chart"></div></div><div class="card"><h3>PMI与CPI</h3><div id="pmiChart" class="chart"></div></div></div></section>
+<section class="panel" id="macro"><div class="grid kpis" id="macroKpis"></div><div class="grid g2"><div class="card"><h3>M1、M2与剪刀差</h3><div id="moneyChart" class="chart"></div></div><div class="card"><h3>银行间资金利率</h3><div id="liquidityKpis" class="grid g3" style="margin-bottom:12px"></div><div id="liquidityChart" class="chart"></div></div><div class="card"><h3>社会融资规模</h3><div id="socialChart" class="chart"></div></div><div class="card"><h3>PMI与CPI</h3><div id="pmiChart" class="chart"></div></div></div></section>
 
 <section class="panel" id="global"><div class="card"><h3>美国主要指数、美元与科技龙头</h3><div id="globalCards" class="asset-grid"></div></div><div class="grid g2" style="margin-top:16px"><div class="card"><h3>美国主要指数与美元指数 <small>起点=100</small></h3><div id="usIndexChart" class="chart"></div></div><div class="card"><h3>美国国债收益率</h3><div id="treasuryKpis" class="grid g2" style="margin-bottom:12px"></div><div id="treasuryChart" class="chart"></div></div></div><div class="card" style="margin-top:16px"><h3>中美韩科技龙头 <small>包含美光、三星电子、SK海力士</small></h3><div id="techCards" class="asset-grid"></div><div id="techChart" class="chart tall"></div></div></section>
 
@@ -159,7 +161,8 @@ function renderFund(){const f=DATA.fund;if(!f.length)return;const sorted=[...f].
 
 function renderHealth(){const ds=DATA.status.datasets||{};const labels={macro:'宏观数据',liquidity:'DR/Shibor',market:'全球行情',global_macro:'美债收益率',valuation:'历史估值',sentiment:'A股情绪',crowding:'交易拥挤度',breadth:'涨跌家数',leverage:'两融杠杆',deviation:'指数偏离度',fund_subscription:'基金募集'};document.getElementById('sourceCards').innerHTML=Object.entries(labels).map(([key,label])=>{const d=ds[key]||{status:'empty'};return `<div class="source-card"><div class="source-status ${d.status}">${label} · ${d.status||'empty'}</div><div class="asset-symbol" style="margin-top:7px">最新日期：${cnDate(d.latest_date)}</div><div class="asset-symbol">本次写入：${d.rows??0} 行；缓存：${d.cached_rows??d.total_cached_rows??0} 行</div>${d.error?`<div class="hint">${String(d.error).slice(0,420)}</div>`:''}</div>`}).join('')}
 
-renderOverview();renderMacro();renderGlobal();renderAshare();renderValuation();renderFund();renderHealth();
+function safeRender(name,fn){try{fn()}catch(error){console.error(`Render failed: ${name}`,error)}}
+safeRender('overview',renderOverview);safeRender('macro',renderMacro);safeRender('global',renderGlobal);safeRender('ashare',renderAshare);safeRender('valuation',renderValuation);safeRender('fund',renderFund);safeRender('health',renderHealth);
 </script></body></html>'''
 
 
