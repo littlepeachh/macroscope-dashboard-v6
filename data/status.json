@@ -1,38 +1,259 @@
 {
   "app_version": "6.0.0",
-  "updated_at": "2026-07-21T19:40:43.465411+08:00",
-  "overall_status": "demo",
-  "last_update_mode": "demo",
   "datasets": {
     "macro": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 168,
+      "started_at": "2026-07-21T21:27:58+08:00",
+      "finished_at": "2026-07-21T21:28:24+08:00",
+      "latest_date": "202606",
+      "total_cached_rows": 168,
+      "source_details": {
+        "components": {
+          "money_supply": {
+            "status": "success",
+            "rows": 168,
+            "source": "东方财富 / AKShare"
+          },
+          "social_financing": {
+            "status": "success",
+            "rows": 103,
+            "source": "商务数据中心 / AKShare"
+          },
+          "social_financing_stock": {
+            "status": "success",
+            "rows": 6,
+            "source": "中国人民银行官方社会融资规模存量统计表"
+          },
+          "pmi": {
+            "status": "success",
+            "rows": 168,
+            "source": "东方财富 / AKShare"
+          },
+          "cpi": {
+            "status": "success",
+            "rows": 168,
+            "source": "东方财富 / AKShare"
+          }
+        },
+        "messages": [
+          "人民银行社融存量部分年份失败: 2022: HTTPError('404 Client Error: Not Found for url: https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2022ntjsj/shrzgm/index.html') | 2023: HTTPError('404 Client Error: Not Found for url: https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2023ntjsj/shrzgm/index.html') | 2024: HTTPError('404 Client Error: Not Found for url: https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2024ntjsj/shrzgm/index.html') | 2025: HTTPError('404 Client Error: Not Found for url: https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2025ntjsj/shrzgm/index.html')"
+        ]
+      },
+      "cached_rows": 168
     },
     "liquidity": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 4941,
+      "started_at": "2026-07-21T21:28:24+08:00",
+      "finished_at": "2026-07-21T21:28:36+08:00",
+      "latest_date": "20260721",
+      "total_cached_rows": 4977,
+      "source_details": {
+        "shibor_on": {
+          "status": "success",
+          "rows": 4941,
+          "source": "中国货币网 / AKShare"
+        },
+        "dr": {
+          "status": "failed",
+          "error": "DataFetchError('中国货币网未解析到DR001/DR007；严格不以FDR替代。')",
+          "note": "严格不使用FDR替代DR"
+        }
+      },
+      "note": "DR来自中国货币网，严格不以FDR替代。",
+      "cached_rows": 4977
     },
     "market": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 32456,
+      "started_at": "2026-07-21T21:28:36+08:00",
+      "finished_at": "2026-07-21T21:28:48+08:00",
+      "latest_date": "20260721",
+      "total_cached_rows": 32456,
+      "symbols": {
+        "000001.SH": {
+          "status": "success",
+          "rows": 1586,
+          "source": "新浪财经 / AKShare"
+        },
+        "399001.SZ": {
+          "status": "success",
+          "rows": 1586,
+          "source": "新浪财经 / AKShare"
+        },
+        "399006.SZ": {
+          "status": "success",
+          "rows": 1586,
+          "source": "新浪财经 / AKShare"
+        },
+        "000300.SH": {
+          "status": "success",
+          "rows": 1586,
+          "source": "新浪财经 / AKShare"
+        },
+        "000688.SH": {
+          "status": "success",
+          "rows": 1586,
+          "source": "新浪财经 / AKShare"
+        },
+        "931087.CSI": {
+          "status": "success",
+          "rows": 1587,
+          "source": "中证指数官网 / AKShare"
+        },
+        "^IXIC": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "^GSPC": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "^DJI": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "DX-Y.NYB": {
+          "status": "success",
+          "rows": 1647,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "AAPL": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "MSFT": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "NVDA": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "AMZN": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "GOOGL": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "META": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "TSLA": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "MU": {
+          "status": "success",
+          "rows": 1644,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "005930.KS": {
+          "status": "success",
+          "rows": 1604,
+          "source": "Yahoo Finance / yfinance"
+        },
+        "000660.KS": {
+          "status": "success",
+          "rows": 1604,
+          "source": "Yahoo Finance / yfinance"
+        }
+      },
+      "cached_rows": 32456
     },
     "global_macro": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 2,
+      "started_at": "2026-07-21T21:28:48+08:00",
+      "finished_at": "2026-07-21T21:38:01+08:00",
+      "latest_date": "20260717",
+      "total_cached_rows": 2,
+      "source_details": {
+        "DGS2": {
+          "status": "success",
+          "rows": 1,
+          "latest_date": "20260717",
+          "source": "美联储H.15当前发布页",
+          "fallback_errors": [
+            "FRED CSV: ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))",
+            "FRED TXT: ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))"
+          ]
+        },
+        "DGS10": {
+          "status": "success",
+          "rows": 1,
+          "latest_date": "20260717",
+          "source": "美联储H.15当前发布页",
+          "fallback_errors": [
+            "FRED CSV: ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))",
+            "FRED TXT: ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))"
+          ]
+        }
+      },
+      "latest_by_series": {
+        "DGS2": "20260717",
+        "DGS10": "20260717"
+      },
+      "note": "DGS10独立抓取；DGS2失败不会阻止美国10年期国债收益率更新。",
+      "cached_rows": 2
     },
     "valuation": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 23253,
+      "started_at": "2026-07-21T21:38:01+08:00",
+      "finished_at": "2026-07-21T21:38:26+08:00",
+      "latest_date": "20260721",
+      "total_cached_rows": 23253,
+      "indices": {
+        "000001.SH": {
+          "status": "success",
+          "rows": 5477,
+          "source": "中证指数官网 / AKShare"
+        },
+        "399001.SZ": {
+          "status": "failed",
+          "error": "DataFetchError(\"估值数据失败: 中证指数: ValueError('Length mismatch: Expected axis has 0 elements, new values have 16 elements') | 乐咕乐股: KeyError('深证成指')\")"
+        },
+        "399006.SZ": {
+          "status": "failed",
+          "error": "DataFetchError(\"估值数据失败: 中证指数: ValueError('Length mismatch: Expected axis has 0 elements, new values have 16 elements') | 乐咕乐股: KeyError('创业板指')\")"
+        },
+        "000688.SH": {
+          "status": "success",
+          "rows": 1588,
+          "source": "中证指数官网 / AKShare"
+        },
+        "000016.SH": {
+          "status": "success",
+          "rows": 5477,
+          "source": "中证指数官网 / AKShare"
+        },
+        "000300.SH": {
+          "status": "success",
+          "rows": 5476,
+          "source": "中证指数官网 / AKShare"
+        },
+        "000905.SH": {
+          "status": "success",
+          "rows": 5235,
+          "source": "中证指数官网 / AKShare"
+        }
+      },
+      "cached_rows": 23253
     },
     "crowding": {
       "status": "demo",
@@ -53,16 +274,71 @@
       "latest_date": "20251229"
     },
     "deviation": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 1680,
+      "started_at": "2026-07-21T21:40:49+08:00",
+      "finished_at": "2026-07-21T21:40:49+08:00",
+      "latest_date": "20260721",
+      "total_cached_rows": 1680,
+      "method": "(指数收盘/10周或20周均线-1)×100%",
+      "indices": {
+        "000001.SH": {
+          "status": "success",
+          "rows": 336,
+          "latest_date": "20260721"
+        },
+        "399001.SZ": {
+          "status": "success",
+          "rows": 336,
+          "latest_date": "20260721"
+        },
+        "399006.SZ": {
+          "status": "success",
+          "rows": 336,
+          "latest_date": "20260721"
+        },
+        "000688.SH": {
+          "status": "success",
+          "rows": 336,
+          "latest_date": "20260721"
+        },
+        "000300.SH": {
+          "status": "success",
+          "rows": 336,
+          "latest_date": "20260721"
+        }
+      },
+      "cached_rows": 1680
     },
     "fund_subscription": {
-      "status": "demo",
-      "rows": 1,
-      "cached_rows": 1,
-      "latest_date": "20251229"
+      "status": "success",
+      "rows": 300,
+      "started_at": "2026-07-21T21:40:49+08:00",
+      "finished_at": "2026-07-21T21:40:56+08:00",
+      "latest_date": "20260715",
+      "total_cached_rows": 300,
+      "note": "公开字段为募集份额（亿份）；按基金常见初始面值1元/份近似展示募集规模（亿元），并非基金存续期每日净申购额。",
+      "cached_rows": 300
+    },
+    "sentiment": {
+      "status": "success",
+      "rows": 2,
+      "started_at": "2026-07-21T21:38:26+08:00",
+      "finished_at": "2026-07-21T21:40:49+08:00",
+      "latest_date": "20260721",
+      "crowding_cached_rows": 1,
+      "breadth_cached_rows": 1,
+      "leverage": {
+        "status": "success",
+        "rows": 1,
+        "latest_date": "20260720",
+        "source": "上交所融资融券汇总 + 深交所融资融券汇总"
+      },
+      "source": "新浪沪深京A股实时行情 / AKShare",
+      "snapshot_kind": "收盘后快照"
     }
-  }
+  },
+  "updated_at": "2026-07-21T21:27:58+08:00",
+  "overall_status": "success",
+  "last_update_mode": "all"
 }
