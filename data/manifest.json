@@ -1,0 +1,154 @@
+{
+  "ok": true,
+  "failures": [],
+  "data": {
+    "macro.csv": {
+      "rows": 78,
+      "columns": [
+        "month",
+        "m1_trillion",
+        "m1_yoy_pct",
+        "m2_trillion",
+        "m2_yoy_pct",
+        "sf_increment_trillion",
+        "sf_stock_trillion",
+        "sf_stock_yoy_pct",
+        "pmi_manufacturing",
+        "pmi_non_manufacturing",
+        "cpi_yoy_pct",
+        "cpi_mom_pct",
+        "m1_m2_gap_pp",
+        "m1_m2_mechanical_sum_trillion",
+        "sf_increment_yoy_pct",
+        "sf_12m_trillion",
+        "sf_12m_yoy_pct",
+        "source"
+      ]
+    },
+    "liquidity.csv": {
+      "rows": 520,
+      "columns": [
+        "trade_date",
+        "dr001_pct",
+        "dr007_pct",
+        "shibor_on_pct",
+        "source"
+      ]
+    },
+    "market.csv": {
+      "rows": 8320,
+      "columns": [
+        "trade_date",
+        "symbol",
+        "name",
+        "market",
+        "currency",
+        "asset_group",
+        "close",
+        "pct_change",
+        "volume",
+        "amount",
+        "source"
+      ]
+    },
+    "global_macro.csv": {
+      "rows": 1040,
+      "columns": [
+        "trade_date",
+        "series",
+        "name",
+        "value_pct",
+        "unit",
+        "source"
+      ]
+    },
+    "valuation.csv": {
+      "rows": 3640,
+      "columns": [
+        "trade_date",
+        "index_code",
+        "index_name",
+        "pe_ttm",
+        "pb",
+        "source"
+      ]
+    },
+    "crowding.csv": {
+      "rows": 520,
+      "columns": [
+        "trade_date",
+        "top_fraction",
+        "stock_count",
+        "top_count",
+        "top_amount_trillion",
+        "total_amount_trillion",
+        "crowding_pct",
+        "source",
+        "snapshot_kind"
+      ]
+    },
+    "breadth.csv": {
+      "rows": 520,
+      "columns": [
+        "trade_date",
+        "up_count",
+        "down_count",
+        "flat_count",
+        "total_count",
+        "total_amount_trillion",
+        "total_market_cap_trillion",
+        "broad_turnover_pct",
+        "source",
+        "snapshot_kind"
+      ]
+    },
+    "leverage.csv": {
+      "rows": 520,
+      "columns": [
+        "trade_date",
+        "margin_balance_trillion",
+        "total_market_cap_trillion",
+        "margin_to_market_cap_pct",
+        "source",
+        "note"
+      ]
+    },
+    "deviation.csv": {
+      "rows": 105,
+      "columns": [
+        "trade_date",
+        "symbol",
+        "name",
+        "close",
+        "ma10w",
+        "ma20w",
+        "dev10w_pct",
+        "dev20w_pct",
+        "source"
+      ]
+    },
+    "fund_subscription.csv": {
+      "rows": 80,
+      "columns": [
+        "founded_date",
+        "fund_code",
+        "fund_name",
+        "fund_type",
+        "fund_company",
+        "raised_shares_100m",
+        "estimated_raised_amount_100m",
+        "source",
+        "method_note"
+      ]
+    },
+    "a_share_universe.csv": {
+      "rows": 0,
+      "columns": [
+        "code",
+        "exchange",
+        "source",
+        "updated_at"
+      ]
+    }
+  }
+}

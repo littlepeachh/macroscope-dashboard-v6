@@ -1,0 +1,68 @@
+{
+  "app_version": "6.0.0",
+  "updated_at": "2026-07-21T19:40:43.465411+08:00",
+  "overall_status": "demo",
+  "last_update_mode": "demo",
+  "datasets": {
+    "macro": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "liquidity": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "market": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "global_macro": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "valuation": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "crowding": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "breadth": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "leverage": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "deviation": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    },
+    "fund_subscription": {
+      "status": "demo",
+      "rows": 1,
+      "cached_rows": 1,
+      "latest_date": "20251229"
+    }
+  }
+}
