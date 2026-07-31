@@ -4,8 +4,8 @@
     "macro": {
       "status": "success",
       "rows": 169,
-      "started_at": "2026-07-31T19:13:44+08:00",
-      "finished_at": "2026-07-31T19:14:03+08:00",
+      "started_at": "2026-08-01T00:59:35+08:00",
+      "finished_at": "2026-08-01T00:59:57+08:00",
       "latest_date": "202607",
       "total_cached_rows": 169,
       "source_details": {
@@ -45,8 +45,8 @@
     "liquidity": {
       "status": "success",
       "rows": 4949,
-      "started_at": "2026-07-31T19:14:03+08:00",
-      "finished_at": "2026-07-31T19:14:18+08:00",
+      "started_at": "2026-08-01T00:59:57+08:00",
+      "finished_at": "2026-08-01T01:00:11+08:00",
       "latest_date": "20260731",
       "total_cached_rows": 4985,
       "source_details": {
@@ -311,14 +311,14 @@
       "cached_rows": 1685
     },
     "fund_subscription": {
-      "status": "failed",
-      "rows": 0,
-      "started_at": "2026-07-31T00:18:08+08:00",
-      "finished_at": "2026-07-31T00:36:08+08:00",
-      "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='fund.eastmoney.com', port=443): Max retries exceeded with url: /data/FundNewIssue.aspx?t=xcln&sort=jzrgq%2Cdesc&y=&page=1%2C50000&isbuy=1&v=0.4069919776543214 (Caused by ConnectTimeoutError(<HTTPSConnection(host='fund.eastmoney.com', port=443) at 0x7f81dcb38860>, 'Connection to fund.eastmoney.com timed out. (connect timeout=None)'))\"))",
-      "cached_rows": 300,
-      "latest_date": "20260724",
-      "serving_cached_data": true
+      "status": "success",
+      "rows": 300,
+      "started_at": "2026-08-01T01:00:11+08:00",
+      "finished_at": "2026-08-01T01:00:17+08:00",
+      "latest_date": "20260728",
+      "total_cached_rows": 300,
+      "note": "公开字段为募集份额（亿份）；按基金常见初始面值1元/份近似展示募集规模（亿元），并非基金存续期每日净申购额。",
+      "cached_rows": 300
     },
     "sentiment": {
       "status": "partial",
@@ -331,7 +331,7 @@
       "note": "非A股交易时段，继续展示上一次成功快照。"
     }
   },
-  "updated_at": "2026-08-01T00:09:52+08:00",
+  "updated_at": "2026-08-01T00:59:35+08:00",
   "overall_status": "success",
-  "last_update_mode": "close"
+  "last_update_mode": "evening"
 }
