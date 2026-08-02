@@ -4,8 +4,8 @@
     "macro": {
       "status": "success",
       "rows": 169,
-      "started_at": "2026-08-01T22:48:05+08:00",
-      "finished_at": "2026-08-01T22:48:35+08:00",
+      "started_at": "2026-08-02T17:37:06+08:00",
+      "finished_at": "2026-08-02T17:37:25+08:00",
       "latest_date": "202607",
       "total_cached_rows": 169,
       "source_details": {
@@ -45,8 +45,8 @@
     "liquidity": {
       "status": "success",
       "rows": 4949,
-      "started_at": "2026-08-01T22:48:35+08:00",
-      "finished_at": "2026-08-01T22:49:03+08:00",
+      "started_at": "2026-08-02T17:37:25+08:00",
+      "finished_at": "2026-08-02T17:37:44+08:00",
       "latest_date": "20260731",
       "total_cached_rows": 4985,
       "source_details": {
@@ -331,7 +331,7 @@
       "note": "非A股交易时段，继续展示上一次成功快照。"
     }
   },
-  "updated_at": "2026-08-02T15:41:35+08:00",
+  "updated_at": "2026-08-02T17:37:06+08:00",
   "overall_status": "success",
-  "last_update_mode": "global"
+  "last_update_mode": "macro"
 }
