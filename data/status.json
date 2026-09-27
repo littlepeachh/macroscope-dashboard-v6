@@ -66,9 +66,9 @@
     },
     "market": {
       "status": "success",
-      "rows": 31704,
-      "started_at": "2026-09-26T08:38:00+08:00",
-      "finished_at": "2026-09-26T08:38:10+08:00",
+      "rows": 33403,
+      "started_at": "2026-09-27T08:36:52+08:00",
+      "finished_at": "2026-09-27T08:37:00+08:00",
       "latest_date": "20260925",
       "total_cached_rows": 33407,
       "symbols": {
@@ -124,42 +124,42 @@
         },
         "AAPL": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "MSFT": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "NVDA": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "AMZN": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "GOOGL": {
-          "status": "failed",
-          "rows": 0,
-          "source": null
+          "status": "success",
+          "rows": 1692,
+          "source": "Yahoo Finance / yfinance"
         },
         "META": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "TSLA": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "MU": {
           "status": "success",
-          "rows": 1691,
+          "rows": 1692,
           "source": "Yahoo Finance / yfinance"
         },
         "005930.KS": {
@@ -178,8 +178,8 @@
     "global_macro": {
       "status": "success",
       "rows": 2,
-      "started_at": "2026-09-26T08:38:10+08:00",
-      "finished_at": "2026-09-26T08:47:25+08:00",
+      "started_at": "2026-09-27T08:37:00+08:00",
+      "finished_at": "2026-09-27T08:46:14+08:00",
       "latest_date": "20260924",
       "total_cached_rows": 56,
       "source_details": {
@@ -276,8 +276,8 @@
     "deviation": {
       "status": "success",
       "rows": 1725,
-      "started_at": "2026-09-26T08:47:25+08:00",
-      "finished_at": "2026-09-26T08:47:25+08:00",
+      "started_at": "2026-09-27T08:46:14+08:00",
+      "finished_at": "2026-09-27T08:46:14+08:00",
       "latest_date": "20260924",
       "total_cached_rows": 1725,
       "method": "(指数收盘/10周或20周均线-1)×100%",
@@ -338,7 +338,7 @@
       "snapshot_kind": "收盘后快照"
     }
   },
-  "updated_at": "2026-09-26T22:44:02+08:00",
+  "updated_at": "2026-09-27T08:36:52+08:00",
   "overall_status": "success",
-  "last_update_mode": "evening"
+  "last_update_mode": "global"
 }
