@@ -4,8 +4,8 @@
     "macro": {
       "status": "success",
       "rows": 171,
-      "started_at": "2026-10-07T00:56:02+08:00",
-      "finished_at": "2026-10-07T00:56:21+08:00",
+      "started_at": "2026-10-07T16:35:07+08:00",
+      "finished_at": "2026-10-07T16:35:26+08:00",
       "latest_date": "202609",
       "total_cached_rows": 171,
       "source_details": {
@@ -45,8 +45,8 @@
     "liquidity": {
       "status": "success",
       "rows": 4992,
-      "started_at": "2026-10-07T00:56:21+08:00",
-      "finished_at": "2026-10-07T00:56:39+08:00",
+      "started_at": "2026-10-07T16:35:26+08:00",
+      "finished_at": "2026-10-07T16:35:45+08:00",
       "latest_date": "20260930",
       "total_cached_rows": 5028,
       "source_details": {
@@ -338,7 +338,7 @@
       "snapshot_kind": "收盘后快照"
     }
   },
-  "updated_at": "2026-10-07T09:32:39+08:00",
+  "updated_at": "2026-10-07T16:35:07+08:00",
   "overall_status": "success",
-  "last_update_mode": "global"
+  "last_update_mode": "macro"
 }
