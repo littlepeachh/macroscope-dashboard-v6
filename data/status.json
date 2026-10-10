@@ -67,8 +67,8 @@
     "market": {
       "status": "success",
       "rows": 33569,
-      "started_at": "2026-10-09T23:32:40+08:00",
-      "finished_at": "2026-10-09T23:32:50+08:00",
+      "started_at": "2026-10-10T09:45:29+08:00",
+      "finished_at": "2026-10-10T09:45:42+08:00",
       "latest_date": "20261009",
       "total_cached_rows": 33574,
       "symbols": {
@@ -178,15 +178,15 @@
     "global_macro": {
       "status": "success",
       "rows": 2,
-      "started_at": "2026-10-09T10:10:42+08:00",
-      "finished_at": "2026-10-09T10:19:56+08:00",
-      "latest_date": "20261007",
-      "total_cached_rows": 74,
+      "started_at": "2026-10-10T09:45:42+08:00",
+      "finished_at": "2026-10-10T09:54:56+08:00",
+      "latest_date": "20261008",
+      "total_cached_rows": 76,
       "source_details": {
         "DGS2": {
           "status": "success",
           "rows": 1,
-          "latest_date": "20261007",
+          "latest_date": "20261008",
           "source": "美联储H.15当前发布页",
           "fallback_errors": [
             "FRED CSV: ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))",
@@ -196,7 +196,7 @@
         "DGS10": {
           "status": "success",
           "rows": 1,
-          "latest_date": "20261007",
+          "latest_date": "20261008",
           "source": "美联储H.15当前发布页",
           "fallback_errors": [
             "FRED CSV: ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))",
@@ -205,11 +205,11 @@
         }
       },
       "latest_by_series": {
-        "DGS2": "20261007",
-        "DGS10": "20261007"
+        "DGS2": "20261008",
+        "DGS10": "20261008"
       },
       "note": "DGS10独立抓取；DGS2失败不会阻止美国10年期国债收益率更新。",
-      "cached_rows": 74
+      "cached_rows": 76
     },
     "valuation": {
       "status": "success",
@@ -276,8 +276,8 @@
     "deviation": {
       "status": "success",
       "rows": 1735,
-      "started_at": "2026-10-09T23:35:13+08:00",
-      "finished_at": "2026-10-09T23:35:13+08:00",
+      "started_at": "2026-10-10T09:54:56+08:00",
+      "finished_at": "2026-10-10T09:54:56+08:00",
       "latest_date": "20261009",
       "total_cached_rows": 1735,
       "method": "(指数收盘/10周或20周均线-1)×100%",
@@ -338,7 +338,7 @@
       "snapshot_kind": "收盘后快照"
     }
   },
-  "updated_at": "2026-10-10T01:11:08+08:00",
+  "updated_at": "2026-10-10T09:45:29+08:00",
   "overall_status": "success",
-  "last_update_mode": "evening"
+  "last_update_mode": "global"
 }
