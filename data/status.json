@@ -4,8 +4,8 @@
     "macro": {
       "status": "success",
       "rows": 171,
-      "started_at": "2026-11-17T18:37:41+08:00",
-      "finished_at": "2026-11-17T18:38:04+08:00",
+      "started_at": "2026-11-18T03:24:06+08:00",
+      "finished_at": "2026-11-18T03:24:20+08:00",
       "latest_date": "202609",
       "total_cached_rows": 171,
       "source_details": {
@@ -46,8 +46,8 @@
     "liquidity": {
       "status": "failed",
       "rows": 0,
-      "started_at": "2026-11-17T18:38:04+08:00",
-      "finished_at": "2026-11-17T18:38:09+08:00",
+      "started_at": "2026-11-18T03:24:20+08:00",
+      "finished_at": "2026-11-18T03:24:22+08:00",
       "error": "DataFetchError('DR与Shibor数据源均失败')",
       "cached_rows": 5056,
       "latest_date": "20261113",
@@ -294,8 +294,8 @@
     "fund_subscription": {
       "status": "success",
       "rows": 300,
-      "started_at": "2026-11-17T04:40:57+08:00",
-      "finished_at": "2026-11-17T04:41:00+08:00",
+      "started_at": "2026-11-18T03:24:22+08:00",
+      "finished_at": "2026-11-18T03:24:31+08:00",
       "latest_date": "20261110",
       "total_cached_rows": 300,
       "note": "公开字段为募集份额（亿份）；按基金常见初始面值1元/份近似展示募集规模（亿元），并非基金存续期每日净申购额。",
@@ -312,7 +312,7 @@
       "note": "非A股交易时段，继续展示上一次成功快照。"
     }
   },
-  "updated_at": "2026-11-18T01:51:11+08:00",
-  "overall_status": "success",
-  "last_update_mode": "close"
+  "updated_at": "2026-11-18T03:24:06+08:00",
+  "overall_status": "partial",
+  "last_update_mode": "evening"
 }
