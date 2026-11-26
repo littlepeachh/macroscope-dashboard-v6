@@ -72,7 +72,7 @@
       "status": "ok"
     },
     "valuation.csv": {
-      "rows": 23652,
+      "rows": 23655,
       "columns": [
         "trade_date",
         "index_code",
