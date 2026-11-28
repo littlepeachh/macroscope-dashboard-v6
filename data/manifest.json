@@ -60,7 +60,7 @@
       "status": "ok"
     },
     "global_macro.csv": {
-      "rows": 138,
+      "rows": 140,
       "columns": [
         "trade_date",
         "series",
